@@ -1,3 +1,6 @@
+# A simple Python client to communicate over ADB with the phone NFC app
+# Author: James Atkin
+
 import socket
 import subprocess
 import time
@@ -5,7 +8,7 @@ import time
 ip = "localhost"
 port = 1337
 
-# Shell command for port forwarding. This allows us communicate over ADB
+# Shell command for port forwarding. This allows us to communicate over ADB
 command = "sudo adb forward tcp:1337 tcp:1337"
 process = subprocess.Popen(command.split(), stdout=subprocess.PIPE)
 output, error = process.communicate()
