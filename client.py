@@ -25,11 +25,11 @@ while True:
     try:
         # Get the length of the room name so we know how many bytes to expect
         string_length = int(s.recv(4))
-        # Get the room name
-        room = s.recv(string_length)
-        if room:
+        # Get the booking id
+        booking_id = s.recv(string_length)
+        if booking_id:
             # Download files or whatever in here, go mental
-            print("Unlock received for room '" + room + "', lovely stuff")
+            print("Unlock received for booking_id '" + booking_id + "', lovely stuff")
     except ValueError: 
         # In this case, we have received some null data. Only bad things can cause this such as unplugging the USB cable, or quitting the server phone-side
         print("Something went wrong, maybe the connection broke? Shutting down.")
